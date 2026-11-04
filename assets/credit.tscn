@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://ba7qsnhg7ukc3"]
+
+[ext_resource type="Script" uid="uid://c4yvnjrixsch8" path="res://assets/tutorial.gd" id="1_ovy7q"]
+[ext_resource type="Texture2D" uid="uid://cjgn02jnj6vm" path="res://assets/7 Levels/credits.png" id="2_ovy7q"]
+[ext_resource type="FontFile" uid="uid://dsxs6hyhbbiyt" path="res://assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="3_bv22m"]
+[ext_resource type="Texture2D" uid="uid://t3twealhame4" path="res://assets/5 GUI/Buttons/Button_09.png" id="4_4wvi0"]
+[ext_resource type="Texture2D" uid="uid://cp4grpkfhfstu" path="res://assets/5 GUI/Buttons/Button_10.png" id="5_ppdlb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slomt"]
+content_margin_bottom = 35.0
+texture = ExtResource("4_4wvi0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03lib"]
+texture = ExtResource("5_ppdlb")
+
+[node name="Credit" type="Node2D"]
+script = ExtResource("1_ovy7q")
+
+[node name="credit" type="Sprite2D" parent="."]
+position = Vector2(960, 542)
+scale = Vector2(1, 1.0037037)
+texture = ExtResource("2_ovy7q")
+
+[node name="back2" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 888.0
+offset_right = 440.0
+offset_bottom = 1033.0
+theme_override_fonts/font = ExtResource("3_bv22m")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_slomt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_03lib")
+theme_override_styles/hover = SubResource("StyleBoxTexture_03lib")
+text = "BACK"
+
+[connection signal="pressed" from="back2" to="." method="_on_back_2_pressed"]

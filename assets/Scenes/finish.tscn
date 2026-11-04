@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://umsdbo3ql2i"]
+
+[ext_resource type="Texture2D" uid="uid://baxnpn1iyw41j" path="res://assets/3 Objects/Checkpoints/Checkpoint_Flag_Out2.png" id="1_0mkby"]
+[ext_resource type="Script" uid="uid://d3jfnmopnpdrc" path="res://assets/Scenes/finish.gd" id="1_46ffs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjqiv"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6jlf"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hipww"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbwc2"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btgi5"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c21ep"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l55j"]
+atlas = ExtResource("1_0mkby")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_debd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjqiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6jlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hipww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbwc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btgi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c21ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l55j")
+}],
+"loop": true,
+"name": &"finish",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46ffs"]
+size = Vector2(34.999954, 48)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_46ffs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.6293945e-06, -15.999998)
+scale = Vector2(0.6666667, 0.6666667)
+sprite_frames = SubResource("SpriteFrames_debd8")
+animation = &"finish"
+autoplay = "finish"
+frame_progress = 0.9831008
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.684342e-14, -16)
+scale = Vector2(0.6666667, 0.6666667)
+shape = SubResource("RectangleShape2D_46ffs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

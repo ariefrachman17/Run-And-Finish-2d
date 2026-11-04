@@ -1,0 +1,169 @@
+[gd_scene load_steps=18 format=3 uid="uid://dvqenqdn4vmpm"]
+
+[ext_resource type="Script" uid="uid://cri103ftx3v0g" path="res://assets/option.gd" id="1_rntjf"]
+[ext_resource type="Texture2D" uid="uid://ddyphh0qvnbp2" path="res://assets/2 Locations/Backgrounds/1.png" id="2_mc4mc"]
+[ext_resource type="Texture2D" uid="uid://dan2hbyfi0vse" path="res://assets/7 Levels/menu/option.png" id="3_fwpal"]
+[ext_resource type="Texture2D" uid="uid://b0o6eugguwihs" path="res://assets/5 GUI/Buttons/Button_40.png" id="5_fw63i"]
+[ext_resource type="Texture2D" uid="uid://t3twealhame4" path="res://assets/5 GUI/Buttons/Button_09.png" id="5_vyi6b"]
+[ext_resource type="Texture2D" uid="uid://cp4grpkfhfstu" path="res://assets/5 GUI/Buttons/Button_10.png" id="6_fwpal"]
+[ext_resource type="Script" uid="uid://bblhgvd5nh8cr" path="res://assets/fullscreen_control.gd" id="8_5eamp"]
+[ext_resource type="Texture2D" uid="uid://c8f2esejsi31" path="res://assets/5 GUI/Icons/Box_Rounded.png" id="8_fw63i"]
+[ext_resource type="Script" uid="uid://cc4ekv5401h01" path="res://assets/audio_control.gd" id="10_fwpal"]
+[ext_resource type="Texture2D" uid="uid://daxn5qdi076ia" path="res://assets/5 GUI/laptop.png" id="12_5eamp"]
+[ext_resource type="Texture2D" uid="uid://x20tg8n7nj3w" path="res://assets/5 GUI/Icons/Icon_17.png" id="13_3mi20"]
+[ext_resource type="FontFile" uid="uid://dsxs6hyhbbiyt" path="res://assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="14_76gr1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5eamp"]
+content_margin_bottom = 35.0
+texture = ExtResource("5_vyi6b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mi20"]
+texture = ExtResource("6_fwpal")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tqfit"]
+color = Color(1, 1, 1, 1)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vyi6b"]
+color = Color(0, 0.44033608, 0, 1)
+thickness = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr5c2"]
+texture = ExtResource("5_fw63i")
+
+[node name="option" type="Node2D"]
+script = ExtResource("1_rntjf")
+
+[node name="bg" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1952.0
+offset_bottom = 1096.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mc4mc")
+stretch_mode = 1
+
+[node name="text" type="TextureRect" parent="."]
+offset_left = 680.0
+offset_top = 128.0
+offset_right = 1264.0
+offset_bottom = 264.0
+texture = ExtResource("3_fwpal")
+
+[node name="back" type="Button" parent="."]
+offset_left = 824.0
+offset_top = 896.0
+offset_right = 1136.0
+offset_bottom = 1041.0
+theme_override_fonts/font = ExtResource("14_76gr1")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_5eamp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3mi20")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3mi20")
+text = "BACK"
+
+[node name="BoxRounded" type="Sprite2D" parent="."]
+position = Vector2(640, 592)
+scale = Vector2(0.3834437, 0.33576158)
+texture = ExtResource("8_fw63i")
+
+[node name="Label" type="Label" parent="BoxRounded"]
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.356
+anchor_right = 0.50200003
+anchor_bottom = 0.356
+offset_left = -1175.2913
+offset_top = -1183.8519
+offset_right = -349.29114
+offset_bottom = -892.8519
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 175
+text = "Music"
+horizontal_alignment = 1
+
+[node name="BoxRounded2" type="Sprite2D" parent="."]
+position = Vector2(1328, 592)
+scale = Vector2(0.3834437, 0.33576158)
+texture = ExtResource("8_fw63i")
+
+[node name="Label" type="Label" parent="BoxRounded2"]
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.356
+anchor_right = 0.50200003
+anchor_bottom = 0.356
+offset_left = -1154.4277
+offset_top = -1133.221
+offset_right = -328.4277
+offset_bottom = -996.2209
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 175
+text = "Screen Mode"
+horizontal_alignment = 1
+
+[node name="FullscreenControl" type="CheckButton" parent="."]
+custom_minimum_size = Vector2(10, 10)
+offset_left = 1392.0
+offset_top = 568.0
+offset_right = 1436.0
+offset_bottom = 592.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.24313726, 1, 1, 0.4)
+theme_override_font_sizes/font_size = 40
+script = ExtResource("8_5eamp")
+
+[node name="AudioControl" type="HSlider" parent="."]
+offset_left = 616.0
+offset_top = 560.0
+offset_right = 709.3334
+offset_bottom = 594.6667
+scale = Vector2(3, 3)
+theme_override_styles/slider = SubResource("StyleBoxLine_tqfit")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_vyi6b")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_vyi6b")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("10_fwpal")
+audio_bus_name = "Music"
+
+[node name="Volume" type="Button" parent="."]
+custom_minimum_size = Vector2(17, 17)
+offset_left = 384.0
+offset_top = 518.0
+offset_right = 492.0
+offset_bottom = 618.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("14_76gr1")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_tr5c2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tr5c2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tr5c2")
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(1200, 608)
+scale = Vector2(12.705882, 11.764706)
+texture = ExtResource("5_fw63i")
+
+[node name="Laptop" type="Sprite2D" parent="."]
+position = Vector2(1200, 608)
+scale = Vector2(0.26562506, 0.25781256)
+texture = ExtResource("12_5eamp")
+
+[node name="music" type="Sprite2D" parent="."]
+position = Vector2(480.00006, 616)
+scale = Vector2(8.970589, 8.029411)
+texture = ExtResource("13_3mi20")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="FullscreenControl" to="FullscreenControl" method="_on_toggled"]
+[connection signal="value_changed" from="AudioControl" to="AudioControl" method="_on_value_changed"]
+[connection signal="pressed" from="Volume" to="." method="_on_back_pressed"]

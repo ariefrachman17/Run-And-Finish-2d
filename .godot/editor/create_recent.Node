@@ -1,0 +1,15 @@
+AudioStreamPlayer
+AudioStreamPlayer2D
+HSlider
+CheckButton
+OptionButton
+Node
+Node2D
+TextureButton
+Panel
+Sprite2D
+TileMapLayer
+VBoxContainer
+TextureRect
+Label
+Button

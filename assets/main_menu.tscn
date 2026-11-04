@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://c82537hrmlogg"]
+
+[ext_resource type="Texture2D" uid="uid://ddyphh0qvnbp2" path="res://assets/2 Locations/Backgrounds/1.png" id="1_cvs7d"]
+[ext_resource type="Script" uid="uid://bnwl6sarwiwbl" path="res://assets/main_menu.gd" id="1_udhl6"]
+[ext_resource type="Texture2D" uid="uid://dcqn50onmggtl" path="res://assets/7 Levels/menu.png" id="2_udhl6"]
+[ext_resource type="Texture2D" uid="uid://wh6vb61uahav" path="res://assets/5 GUI/Buttons/Button_15.png" id="4_0quft"]
+[ext_resource type="Texture2D" uid="uid://dv3xkar0is5gh" path="res://assets/5 GUI/Buttons/Button_16.png" id="5_dtgnq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtgnq"]
+content_margin_bottom = 35.0
+texture = ExtResource("4_0quft")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fpdlq"]
+texture = ExtResource("5_dtgnq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lw4iv"]
+texture = ExtResource("5_dtgnq")
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_udhl6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_cvs7d")
+stretch_mode = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+offset_left = 440.0
+offset_top = 8.0
+offset_right = 1400.0
+offset_bottom = 376.0
+texture = ExtResource("2_udhl6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 704.0
+offset_top = 392.0
+offset_right = 1200.0
+offset_bottom = 1032.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtgnq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fpdlq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lw4iv")
+text = "PLAY"
+
+[node name="Option" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtgnq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lw4iv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lw4iv")
+text = "OPTION"
+
+[node name="Credit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtgnq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lw4iv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lw4iv")
+text = "CREDIT"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtgnq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lw4iv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lw4iv")
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
